@@ -19,9 +19,27 @@
   padding: 0;
 }
 
+/* Prevent horizontal scroll at root level and ensure full width */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Karla', sans-serif;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -47,10 +65,21 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────
-   Product card image hover zoom
+   Product card — flex-col so all cards stretch to equal height
    ───────────────────────────────────────────────────────────────────── */
+.ug-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image zoom on card hover — scoped to .ug-card-img inside a card */
 .ug-card:hover .ug-card-img {
   transform: scale(1.04);
+}
+
+/* Card name grows to push price/stars to the bottom */
+.ug-card-name {
+  flex: 1;
 }
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -59,6 +88,7 @@ body {
 .ug-nav-link {
   position: relative;
   text-decoration: none;
+  white-space: nowrap;          /* Prevent text wrapping in nav */
 }
 
 .ug-nav-link::after {
@@ -76,4 +106,29 @@ body {
 
 .ug-nav-link:hover::after {
   transform: scaleX(1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Hero section — ensure illustration column contains the badge
+   ───────────────────────────────────────────────────────────────────── */
+.ug-hero-visual {
+  /* Extra bottom padding so the -bottom-6 badge stays within bounds */
+  padding-bottom: 2.5rem; /* 40px = 5 × 8px */
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Scroller — outer wrapper gets horizontal breathing room for arrows
+   ───────────────────────────────────────────────────────────────────── */
+.ug-scroller-wrap {
+  /* Arrows are w-10 (40px) + -left-4 (16px) = needs ~56px clearance.
+     mx-8 (32px each side) plus the arrow's own translate gives enough. */
+  margin-left: 2rem;   /* 32px */
+  margin-right: 2rem;  /* 32px */
+}
+
+@media (max-width: 768px) {
+  .ug-scroller-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

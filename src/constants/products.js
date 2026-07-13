@@ -5,12 +5,25 @@ import {
   Flower2,
   Compass,
   FlameKindling,
+  Gift,
+  Wine,
+  Paintbrush,
+  Shirt,
+  TreePine,
+  Heart,
+  Star,
+  Gem,
+  Music,
+  BookOpen,
+  Camera,
+  Puzzle,
+  Lamp,
 } from "lucide-react";
 import { T } from "./tokens";
 
-/** @typedef {{ name: string, price: string, was: string, icon: React.ElementType, from: string, to: string, rating: number, count: number, tag?: { label: string, bg: string, dark?: boolean } }} Product */
+/** @typedef {{ name: string, price: string, was?: string, icon: React.ElementType, from: string, to: string, rating: number, count: number, tag?: { label: string, bg: string, dark?: boolean } }} Product */
 
-/** @type {Product[]} */
+/** @type {Product[]} — Main bestsellers carousel */
 export const PRODUCTS = [
   {
     name: "Wish You Lived Next Door Mug",
@@ -76,4 +89,157 @@ export const PRODUCTS = [
     count: 14,
     tag: { label: "Customizable", bg: T.sky },
   },
+];
+
+/** @type {Product[]} — "More Bestsellers" product grid */
+export const MORE_PRODUCTS = [
+  {
+    name: "Birthdate Candle",
+    price: "$44.00",
+    icon: FlameKindling,
+    from: "#F5E6D0",
+    to: "#E8C9A0",
+    rating: 4.8,
+    count: 234,
+    tag: { label: "Bestseller", bg: T.goldenrod },
+  },
+  {
+    name: "Custom Star Map Print",
+    price: "$52.00",
+    icon: Star,
+    from: "#D0D8E8",
+    to: "#A4B5D0",
+    rating: 4.7,
+    count: 189,
+    tag: { label: "Customizable", bg: T.sky },
+  },
+  {
+    name: "Personalized Recipe Cutting Board",
+    price: "$68.00",
+    icon: BookOpen,
+    from: "#E5D9C4",
+    to: "#C4AE8A",
+    rating: 4.9,
+    count: 456,
+    tag: { label: "Customizable", bg: T.sky },
+  },
+  {
+    name: "Wildflower Seed Bombs",
+    price: "$24.00",
+    icon: Flower2,
+    from: "#D9EBD5",
+    to: "#A8D4A0",
+    rating: 4.6,
+    count: 78,
+  },
+  {
+    name: "Hand-Painted Wine Glasses (Set of 2)",
+    price: "$62.00",
+    icon: Wine,
+    from: "#F2D9E4",
+    to: "#DEB4C8",
+    rating: 4.8,
+    count: 145,
+  },
+  {
+    name: "Personalized Sound Wave Art",
+    price: "$55.00",
+    icon: Music,
+    from: "#D6E4F0",
+    to: "#A8C8E0",
+    rating: 4.5,
+    count: 92,
+    tag: { label: "Customizable", bg: T.sky },
+  },
+  {
+    name: "Memory Film Reel Photo Gift",
+    price: "$36.00",
+    icon: Camera,
+    from: "#F0E4D8",
+    to: "#D8C4A8",
+    rating: 4.7,
+    count: 167,
+  },
+  {
+    name: "Handmade Puzzle Piece Necklace",
+    price: "$45.00",
+    icon: Puzzle,
+    from: "#E0E8F2",
+    to: "#B8C8E0",
+    rating: 4.6,
+    count: 63,
+  },
+];
+
+/** @type {Product[]} — Curated picks grid near bottom */
+export const CURATED_PRODUCTS = [
+  {
+    name: "Adventure Fund Shadow Box",
+    price: "$39.00",
+    icon: TreePine,
+    from: "#D5E8D0",
+    to: "#A0C8A4",
+    rating: 4.8,
+    count: 321,
+  },
+  {
+    name: "Custom Portrait Illustration",
+    price: "$85.00",
+    icon: Paintbrush,
+    from: "#F0D8E8",
+    to: "#D8A8C4",
+    rating: 4.9,
+    count: 214,
+    tag: { label: "Customizable", bg: T.sky },
+  },
+  {
+    name: "Embroidered Coordinates Sweatshirt",
+    price: "$58.00",
+    icon: Shirt,
+    from: "#E4E0D8",
+    to: "#C4B8A4",
+    rating: 4.7,
+    count: 98,
+  },
+  {
+    name: "Crystal Heart Suncatcher",
+    price: "$32.00",
+    icon: Heart,
+    from: "#F5E0E0",
+    to: "#E8B8B8",
+    rating: 4.9,
+    count: 476,
+    tag: { label: "Bestseller", bg: T.goldenrod },
+  },
+  {
+    name: "Personalized Garden Stones",
+    price: "$42.00",
+    icon: Gem,
+    from: "#D8E4D0",
+    to: "#A8C4A0",
+    rating: 4.6,
+    count: 132,
+    tag: { label: "Customizable", bg: T.sky },
+  },
+  {
+    name: "Hand-Blown Glass Lamp",
+    price: "$120.00",
+    icon: Lamp,
+    from: "#F0E8D4",
+    to: "#E0CCA4",
+    rating: 4.8,
+    count: 54,
+  },
+];
+
+/** Category tiles for the "Pretty much everything" grid */
+export const CATEGORIES = [
+  { label: "mugs", icon: Coffee, from: "#F7D9C4", to: "#F0B99A" },
+  { label: "personalized", icon: Paintbrush, from: "#E4D9F0", to: "#C4A8E0" },
+  { label: "home", icon: Lamp, from: "#D5E8D0", to: "#A0C8A4" },
+  { label: "jewelry", icon: Gem, from: "#F2D9E4", to: "#DEB4C8" },
+  { label: "kitchen & bar", icon: Wine, from: "#F0E8D4", to: "#E0CCA4" },
+  { label: "books & media", icon: BookOpen, from: "#D6E4F0", to: "#A8C8E0" },
+  { label: "outdoor", icon: TreePine, from: "#D8E4D0", to: "#A8C4A0" },
+  { label: "experiences", icon: Compass, from: "#F5E6D0", to: "#E8C9A0" },
 ];

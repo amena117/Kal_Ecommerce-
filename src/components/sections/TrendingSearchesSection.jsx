@@ -1,25 +1,21 @@
 import { T } from "../../constants/tokens";
-import { PRODUCTS } from "../../constants/products";
+import { CURATED_PRODUCTS } from "../../constants/products";
 import Scroller from "../ui/Scroller";
 import ProductArt from "../ui/ProductArt";
 import Stars from "../ui/Stars";
 
-/**
- * ProductCard — individual product tile used inside the bestsellers carousel.
- *
- * Layout fixes:
- * - ug-card (flex flex-col) so every card stretches to the tallest sibling.
- * - Fixed w-52 (208px) so all cards are identical width.
- * - Name uses ug-card-name (flex-1) to push price/stars to the bottom.
- * - Removed magic mt/mb; uses a gap-y system instead.
- *
- * @param {import("../../constants/products").Product} props
- */
+const TRENDING_TAGS = [
+  "personalized wedding gifts",
+  "birthday gifts for her",
+  "custom coffee mugs",
+  "wooden puzzles",
+  "meaningful keepsakes",
+  "hostess gifts",
+];
+
 function ProductCard({ name, price, was, icon, from, to, rating, count, tag }) {
   return (
-    /* ug-card = flex flex-col (from index.css) */
     <div className="ug-card shrink-0 w-52 cursor-pointer group">
-      {/* Image */}
       <div className="relative w-full">
         <ProductArt icon={icon} from={from} to={to} />
         {tag && (
@@ -35,7 +31,6 @@ function ProductCard({ name, price, was, icon, from, to, rating, count, tag }) {
         )}
       </div>
 
-      {/* Name — flex-1 pushes price+stars to bottom */}
       <p
         className="ug-card-name ug-body text-sm mt-3 leading-snug"
         style={{ color: T.ink, fontWeight: 500 }}
@@ -43,47 +38,48 @@ function ProductCard({ name, price, was, icon, from, to, rating, count, tag }) {
         {name}
       </p>
 
-      {/* Price row */}
       <div className="flex items-baseline gap-2 mt-2">
         <span className="text-sm" style={{ color: T.persimmon, fontWeight: 700 }}>
           {price}
         </span>
-        <span
-          className="text-xs line-through"
-          style={{ color: T.inkSoft, opacity: 0.6 }}
-        >
-          {was}
-        </span>
       </div>
 
-      {/* Stars */}
       <Stars rating={rating} count={count} />
     </div>
   );
 }
 
-/**
- * BestsellersSection — horizontally scrollable product carousel.
- *
- * Spacing fixes:
- * - pt-16 so there's clean separation from the hero's badge overflow.
- * - pb-12 before the next section.
- * - Scroller is wrapped in ug-scroller-wrap to give arrows breathing room.
- */
-export default function BestsellersSection() {
+export default function TrendingSearchesSection() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 pt-16 pb-12">
+    <section className="w-full max-w-7xl mx-auto px-6 py-12">
       <h2
-        className="ug-display text-3xl w-full text-center mb-10"
+        className="ug-display text-3xl w-full text-center mb-6"
         style={{ color: T.pine, fontWeight: 500 }}
       >
-        Bestsellers for your celebrations
+        Today's Trending Searches
       </h2>
 
-      {/* ug-scroller-wrap adds mx-8 on desktop so arrows fit inside view */}
+      {/* Tags strip */}
+      <div className="flex flex-wrap gap-2 justify-center mb-10 max-w-3xl mx-auto">
+        {TRENDING_TAGS.map((tag) => (
+          <button
+            key={tag}
+            className="px-4 py-2 rounded-full border text-xs font-semibold hover:bg-black/5 transition-colors cursor-pointer"
+            style={{
+              color: T.pineMid,
+              borderColor: "#EDE6D3",
+              background: T.cream,
+            }}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      {/* Carousel */}
       <div className="ug-scroller-wrap">
         <Scroller>
-          {PRODUCTS.map((product) => (
+          {CURATED_PRODUCTS.map((product) => (
             <ProductCard key={product.name} {...product} />
           ))}
         </Scroller>
