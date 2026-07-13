@@ -1,0 +1,79 @@
+/* ─────────────────────────────────────────────────────────────────────
+   Tailwind CSS v4
+   ───────────────────────────────────────────────────────────────────── */
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────
+   Google Fonts
+   ───────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap');
+
+/* ─────────────────────────────────────────────────────────────────────
+   Reset / Base
+   ───────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Typography utilities
+   ───────────────────────────────────────────────────────────────────── */
+.ug-display {
+  font-family: 'Fraunces', serif;
+}
+
+.ug-body {
+  font-family: 'Karla', sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Scrollbar suppression (used on Scroller component)
+   ───────────────────────────────────────────────────────────────────── */
+.ug-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.ug-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Product card image hover zoom
+   ───────────────────────────────────────────────────────────────────── */
+.ug-card:hover .ug-card-img {
+  transform: scale(1.04);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Nav link animated underline
+   ───────────────────────────────────────────────────────────────────── */
+.ug-nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.ug-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: #C1440E; /* persimmon */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.ug-nav-link:hover::after {
+  transform: scaleX(1);
+}
