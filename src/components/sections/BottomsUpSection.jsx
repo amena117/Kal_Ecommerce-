@@ -37,28 +37,48 @@ export default function BottomsUpSection() {
         <div className="grid grid-cols-2 gap-4 order-1 md:order-2">
           <div className="flex flex-col gap-4">
             <div
-              className="rounded-2xl aspect-[4/3] flex items-center justify-center p-6 shadow-sm"
-              style={{ background: "#F5E6D0" }}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm group bg-neutral-100"
             >
-              <Award size={48} color={T.pine} opacity={0.6} />
+              <img
+                src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?auto=format&fit=crop&w=400&q=80"
+                alt="Woodcraft Workshop"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-300" />
+              <div className="absolute top-3 right-3 bg-white/80 p-1.5 rounded-full z-10 shadow-sm">
+                <Award size={18} color={T.pine} />
+              </div>
             </div>
             <div
-              className="rounded-2xl aspect-[4/3] flex items-center justify-center p-6 shadow-sm"
-              style={{ background: "#E0E8F2" }}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center shadow-sm group bg-neutral-100"
             >
-              <ShieldAlert size={48} color={T.pine} opacity={0.6} />
+              <img
+                src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=400&q=80"
+                alt="Finishing Wood"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-300" />
+              <div className="absolute top-3 right-3 bg-white/80 p-1.5 rounded-full z-10 shadow-sm">
+                <ShieldAlert size={18} color={T.pine} />
+              </div>
             </div>
           </div>
           <div
-            className="rounded-2xl flex items-center justify-center p-8 shadow-sm"
-            style={{
-              background: `linear-gradient(135deg, #F3E2B8, ${T.goldenrodDeep})`,
-            }}
+            className="relative rounded-2xl overflow-hidden flex items-center justify-center p-8 shadow-sm group bg-neutral-100"
           >
-            <div className="text-center">
-              <Sparkles size={64} color={T.pine} opacity={0.7} className="mx-auto mb-4" />
-              <span className="ug-display text-lg block font-semibold" style={{ color: T.pine }}>
+            <img
+              src="https://images.unsplash.com/photo-1544045020-8a8f65882f24?auto=format&fit=crop&w=600&q=80"
+              alt="Baseball Bat Mug Crafting"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors duration-300" />
+            <div className="relative z-10 text-center">
+              <Sparkles size={48} color={T.cream} opacity={0.9} className="mx-auto mb-4" />
+              <span className="ug-display text-xl block font-semibold" style={{ color: T.white }}>
                 Baseball Bat Mug
+              </span>
+              <span className="ug-body text-xs block mt-1 tracking-wider" style={{ color: T.cream, opacity: 0.8 }}>
+                Handcrafted from Solid Wood
               </span>
             </div>
           </div>

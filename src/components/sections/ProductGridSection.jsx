@@ -7,11 +7,11 @@ import Stars from "../ui/Stars";
  * GridProductCard — product card used in grid layouts (not carousels).
  * Fills the grid cell width instead of being a fixed shrink-0 size.
  */
-function GridProductCard({ name, price, was, icon, from, to, rating, count, tag }) {
+function GridProductCard({ name, price, was, icon, from, to, rating, count, tag, image }) {
   return (
     <div className="ug-card cursor-pointer group">
       <div className="relative w-full">
-        <ProductArt icon={icon} from={from} to={to} />
+        <ProductArt icon={icon} from={from} to={to} image={image} />
         {tag && (
           <span
             className="absolute top-2.5 left-2.5 text-[11px] px-2.5 py-1

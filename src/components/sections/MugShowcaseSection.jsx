@@ -3,12 +3,12 @@ import { T } from "../../constants/tokens";
 
 export default function MugShowcaseSection() {
   const mugs = [
-    { icon: Coffee, bg: "#F7D9C4" },
-    { icon: Heart, bg: "#F6D8D2" },
-    { icon: Moon, bg: "#DDE9F2" },
-    { icon: Sun, bg: "#F3E2B8" },
-    { icon: Trees, bg: "#DCEFE3" },
-    { icon: Smile, bg: "#EFD9E8" },
+    { icon: Coffee, image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" },
+    { icon: Heart, image: "https://images.unsplash.com/photo-1517256064527-09c53b2d0bc6?auto=format&fit=crop&w=400&q=80" },
+    { icon: Moon, image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80" },
+    { icon: Sun, image: "https://images.unsplash.com/photo-1520606206791-47ea7dfdacf6?auto=format&fit=crop&w=400&q=80" },
+    { icon: Trees, image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80" },
+    { icon: Smile, image: "https://images.unsplash.com/photo-1534531173927-aeb928d54385?auto=format&fit=crop&w=400&q=80" },
   ];
 
   return (
@@ -49,10 +49,18 @@ export default function MugShowcaseSection() {
             return (
               <div
                 key={index}
-                className="aspect-square rounded-2xl flex items-center justify-center p-4 shadow-sm hover:scale-105 transition-transform"
-                style={{ background: mug.bg }}
+                className="relative aspect-square rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform group bg-neutral-100"
               >
-                <Icon size={32} color={T.pine} opacity={0.7} />
+                <img
+                  src={mug.image}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors duration-300" />
+                <div className="absolute top-2.5 right-2.5 bg-white/80 p-1.5 rounded-full z-10 shadow-sm">
+                  <Icon size={16} color={T.pine} />
+                </div>
               </div>
             );
           })}

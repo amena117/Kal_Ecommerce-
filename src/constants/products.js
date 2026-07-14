@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { T } from "./tokens";
 
-/** @typedef {{ name: string, price: string, was?: string, icon: React.ElementType, from: string, to: string, rating: number, count: number, tag?: { label: string, bg: string, dark?: boolean } }} Product */
+/** @typedef {{ name: string, price: string, was?: string, icon: React.ElementType, from: string, to: string, rating: number, count: number, tag?: { label: string, bg: string, dark?: boolean }, image?: string }} Product */
 
 /** @type {Product[]} — Main bestsellers carousel */
 export const PRODUCTS = [
@@ -34,6 +34,7 @@ export const PRODUCTS = [
     to: "#F0B99A",
     rating: 4.9,
     count: 97,
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Custom Message Shortbread Cookies",
@@ -45,6 +46,7 @@ export const PRODUCTS = [
     rating: 4.9,
     count: 312,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Stained Glass Butterflies with a Message",
@@ -56,6 +58,7 @@ export const PRODUCTS = [
     rating: 4.4,
     count: 10,
     tag: { label: "Low Stock", bg: T.poppy, dark: true },
+    image: "https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Glass Flowers with a Message",
@@ -66,6 +69,7 @@ export const PRODUCTS = [
     to: "#DCB4D0",
     rating: 4.6,
     count: 38,
+    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Personalized Engraved Compass",
@@ -77,6 +81,7 @@ export const PRODUCTS = [
     rating: 4.8,
     count: 49,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "The Perfect Match Wood Matchbox",
@@ -88,6 +93,7 @@ export const PRODUCTS = [
     rating: 4.9,
     count: 14,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1601662528567-526cd06f6582?auto=format&fit=crop&w=400&q=80",
   },
 ];
 
@@ -102,6 +108,7 @@ export const MORE_PRODUCTS = [
     rating: 4.8,
     count: 234,
     tag: { label: "Bestseller", bg: T.goldenrod },
+    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Custom Star Map Print",
@@ -112,6 +119,7 @@ export const MORE_PRODUCTS = [
     rating: 4.7,
     count: 189,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Personalized Recipe Cutting Board",
@@ -122,6 +130,7 @@ export const MORE_PRODUCTS = [
     rating: 4.9,
     count: 456,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Wildflower Seed Bombs",
@@ -131,6 +140,7 @@ export const MORE_PRODUCTS = [
     to: "#A8D4A0",
     rating: 4.6,
     count: 78,
+    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Hand-Painted Wine Glasses (Set of 2)",
@@ -140,6 +150,7 @@ export const MORE_PRODUCTS = [
     to: "#DEB4C8",
     rating: 4.8,
     count: 145,
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Personalized Sound Wave Art",
@@ -150,6 +161,7 @@ export const MORE_PRODUCTS = [
     rating: 4.5,
     count: 92,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Memory Film Reel Photo Gift",
@@ -159,6 +171,7 @@ export const MORE_PRODUCTS = [
     to: "#D8C4A8",
     rating: 4.7,
     count: 167,
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Handmade Puzzle Piece Necklace",
@@ -168,6 +181,7 @@ export const MORE_PRODUCTS = [
     to: "#B8C8E0",
     rating: 4.6,
     count: 63,
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80",
   },
 ];
 
@@ -181,6 +195,7 @@ export const CURATED_PRODUCTS = [
     to: "#A0C8A4",
     rating: 4.8,
     count: 321,
+    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Custom Portrait Illustration",
@@ -191,6 +206,7 @@ export const CURATED_PRODUCTS = [
     rating: 4.9,
     count: 214,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Embroidered Coordinates Sweatshirt",
@@ -200,6 +216,7 @@ export const CURATED_PRODUCTS = [
     to: "#C4B8A4",
     rating: 4.7,
     count: 98,
+    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Crystal Heart Suncatcher",
@@ -210,6 +227,7 @@ export const CURATED_PRODUCTS = [
     rating: 4.9,
     count: 476,
     tag: { label: "Bestseller", bg: T.goldenrod },
+    image: "https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Personalized Garden Stones",
@@ -220,6 +238,7 @@ export const CURATED_PRODUCTS = [
     rating: 4.6,
     count: 132,
     tag: { label: "Customizable", bg: T.sky },
+    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Hand-Blown Glass Lamp",
@@ -229,17 +248,66 @@ export const CURATED_PRODUCTS = [
     to: "#E0CCA4",
     rating: 4.8,
     count: 54,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=400&q=80",
   },
 ];
 
 /** Category tiles for the "Pretty much everything" grid */
 export const CATEGORIES = [
-  { label: "mugs", icon: Coffee, from: "#F7D9C4", to: "#F0B99A" },
-  { label: "personalized", icon: Paintbrush, from: "#E4D9F0", to: "#C4A8E0" },
-  { label: "home", icon: Lamp, from: "#D5E8D0", to: "#A0C8A4" },
-  { label: "jewelry", icon: Gem, from: "#F2D9E4", to: "#DEB4C8" },
-  { label: "kitchen & bar", icon: Wine, from: "#F0E8D4", to: "#E0CCA4" },
-  { label: "books & media", icon: BookOpen, from: "#D6E4F0", to: "#A8C8E0" },
-  { label: "outdoor", icon: TreePine, from: "#D8E4D0", to: "#A8C4A0" },
-  { label: "experiences", icon: Compass, from: "#F5E6D0", to: "#E8C9A0" },
+  {
+    label: "mugs",
+    icon: Coffee,
+    from: "#F7D9C4",
+    to: "#F0B99A",
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "personalized",
+    icon: Paintbrush,
+    from: "#E4D9F0",
+    to: "#C4A8E0",
+    image: "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "home",
+    icon: Lamp,
+    from: "#D5E8D0",
+    to: "#A0C8A4",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "jewelry",
+    icon: Gem,
+    from: "#F2D9E4",
+    to: "#DEB4C8",
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "kitchen & bar",
+    icon: Wine,
+    from: "#F0E8D4",
+    to: "#E0CCA4",
+    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "books & media",
+    icon: BookOpen,
+    from: "#D6E4F0",
+    to: "#A8C8E0",
+    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "outdoor",
+    icon: TreePine,
+    from: "#D8E4D0",
+    to: "#A8C4A0",
+    image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    label: "experiences",
+    icon: Compass,
+    from: "#F5E6D0",
+    to: "#E8C9A0",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=400&q=80",
+  },
 ];

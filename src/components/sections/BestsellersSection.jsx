@@ -15,13 +15,13 @@ import Stars from "../ui/Stars";
  *
  * @param {import("../../constants/products").Product} props
  */
-function ProductCard({ name, price, was, icon, from, to, rating, count, tag }) {
+function ProductCard({ name, price, was, icon, from, to, rating, count, tag, image }) {
   return (
     /* ug-card = flex flex-col (from index.css) */
     <div className="ug-card shrink-0 w-52 cursor-pointer group">
       {/* Image */}
       <div className="relative w-full">
-        <ProductArt icon={icon} from={from} to={to} />
+        <ProductArt icon={icon} from={from} to={to} image={image} />
         {tag && (
           <span
             className="absolute top-2.5 left-2.5 text-[11px] px-2.5 py-1 rounded-full font-semibold leading-none"
